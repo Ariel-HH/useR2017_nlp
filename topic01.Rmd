@@ -64,7 +64,7 @@ split it apart into its constituent words.
 ### Splitting with whitespace
 
 Splitting on whitespace alone works reasonably well, though
-there are some issues with punctuation marks: 
+there are some issues with punctuation marks:
 
 ```{r, tidy.opts=list(width.cutoff=60)}
 stri_split(letranger, fixed = " ")
@@ -74,7 +74,7 @@ stri_split(letranger, fixed = " ")
 
 There are a number of packages that support the more complex
 logic needed to deal with many of these errors. Here we'll use
-the **cleanNLP** package as it will be easy to adapt our 
+the **cleanNLP** package as it will be easy to adapt our
 approach to work with more complex annotators in the next
 section.
 
@@ -135,7 +135,7 @@ letranger_tokens$word
 A dataset where each record is its own text is known
 as a *corpus*. In the remainder of this session, we
 will be working with a corpus of the 56 short stories
-featuring Sherlock Holmes. 
+featuring Sherlock Holmes.
 
 We start by constructing a meta data table of these stories:
 
@@ -148,9 +148,9 @@ sh_meta %>% print(n = 5)
 
 ### Annotating files on disk
 
-We want to construct a similar data frame of tokens for 
+We want to construct a similar data frame of tokens for
 all of the short stories in our corpus. As a first step,
-we will re-initalise the tokenizers backend using an 
+we will re-initalise the tokenizers backend using an
 English locale:
 
 ```{r, message = FALSE}
@@ -202,7 +202,7 @@ For example:
 - number of citations
 - presence of known characters
 - count of hashtags in a tweet
-- ratio of quotes/dialogue to raw text 
+- ratio of quotes/dialogue to raw text
 
 ### Visualising Watson and Holmes
 
@@ -266,7 +266,7 @@ sh_tokens %>%
 
 In our first set of analyses, we used our prior knowledge
 to determine which tokens would be interesting to identify
-and tabulate. 
+and tabulate.
 
 Alternatively, we can let the corpus itself tell us which
 terms would be the most interesting. Often just knowing
@@ -375,7 +375,7 @@ sh_toptokens %>% filter(id == 44) %>% print(n = Inf)
 
 One particular category that floats to the top
 of our lists of most frequent tokens are the main characters
-for each story. Identifying the people mentioned in 
+for each story. Identifying the people mentioned in
 a corpus of text has many applications, including:
 
 - on social media it indicates trending issues
@@ -488,10 +488,10 @@ sh_tokens %>%
 
 ### Textual topics and themes
 
-When we look back at our original list of top tokens, 
+When we look back at our original list of top tokens,
 many of those instances that are not characters describe
 the main topics, themes, or artefacts of interest in the
-story. 
+story.
 
 Finding these frequent, non-proper nouns can indicate
 the theme or topics of interest within a corpus of texts.

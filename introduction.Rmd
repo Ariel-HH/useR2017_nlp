@@ -1,5 +1,5 @@
 ---
-title: "Preliminaries"
+title: "Introduction"
 author: "Taylor Arnold and Lauren Tilton"
 date: "04 July 2017"
 fontsize: 9pt
@@ -24,10 +24,10 @@ options(dplyr.print_max = 6, dplyr.print_min = 6)
 options(width = 68)
 ```
 
-### Introduction
+### Goals
 
 Our goal is to introduce concepts and tools for doing exploratory
-and predictive modelling with textual sources. 
+and predictive modelling with textual sources.
 
 ### Outline
 

@@ -1,5 +1,5 @@
 ---
-title: "Where To Next"
+title: "What's Next"
 author: "Taylor Arnold and Lauren Tilton"
 date: "04 July 2017"
 fontsize: 9pt

@@ -116,7 +116,7 @@ words and sentences in our raw text. Common tasks include:
 
 A collection of these running together (as they typically
 need to), is known as an **NLP Pipeline**. We will explain
-the meaning behind and some applications of many of these 
+the meaning behind and some applications of many of these
 annotation tasks in these slides.
 
 ### Back end details
@@ -157,7 +157,7 @@ sh_nlp <- read_csv("data/sh_nlp.csv.gz")
 
 By using the sentence boundaries learned by the NLP pipeline,
 we can more accurately count the average length of the
-sentences in each text. 
+sentences in each text.
 
 ```{r, eval = FALSE}
 sh_nlp %>%
@@ -186,7 +186,7 @@ sh_nlp %>%
     geom_point()
 ```
 
-# Lemmatisation 
+# Lemmatisation
 
 ### Lemmas
 
@@ -270,7 +270,7 @@ taught in schools:
 
 - *VERB*: verbs (all tenses and modes)
 - *NOUN*: nouns (common and proper)
-- *PRON*: pronouns 
+- *PRON*: pronouns
 - *ADJ*: adjectives
 - *ADV*: adverbs
 - *ADP*: adpositions (prepositions and postpositions)
@@ -441,7 +441,7 @@ which verbs are associated with each character by way of
 the 'nsubj' relation. Amongst other things, this can help
 identify sentiment, biases, and power dynamics.
 
-In our corpus, we can use the 'nsubj' tag to identify 
+In our corpus, we can use the 'nsubj' tag to identify
 verbs associated with our main characters:
 
 ```{r}
