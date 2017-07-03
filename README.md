@@ -15,7 +15,7 @@ The tutorial is broken into the following parts:
 - [Preliminaries](https://github.com/statsmaths/useR2017_nlp/blob/master/introduction.pdf)
 - [Topic 1: Exploratory Analysis of Tokenized Text](https://github.com/statsmaths/useR2017_nlp/blob/master/topic01.pdf)
 - [Topic 2: The NLP Pipeline](https://github.com/statsmaths/useR2017_nlp/blob/master/topic02.pdf)
-- [Topic 3: Modelling Textual Data](https://github.com/statsmaths/useR2017_nlp/blob/master/topic02.pdf)
+- [Topic 3: Modelling Textual Data](https://github.com/statsmaths/useR2017_nlp/blob/master/topic03.pdf)
 - [What's Next](https://github.com/statsmaths/useR2017_nlp/blob/master/whats_next.pdf)
 
 It is our intention to keep this repository up and accessible indefinitely.
