@@ -26,11 +26,11 @@ options(width = 68)
 
 ### Summary of today
 
-- Preliminaries (14:00-14:15)
-- Topic I: Tokenising text (14:15-15:00)
-- Topic II: The NLP Pipeline (15:00-15:30; 16:00-16:30)
-- Topic III: Modelling Textual Data (16:30-17:15)
-- Conclusions (17:15-17:30)
+- Preliminaries
+- Topic I: Tokenising text
+- Topic II: The NLP Pipeline
+- Topic III: Modelling Textual Data
+- Conclusions
 
 ### Things we did not cover (but wanted to)
 

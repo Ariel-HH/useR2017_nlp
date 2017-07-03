@@ -240,7 +240,7 @@ length of each sentence in the text.
 
 ```{r, eval = FALSE}
 sh_tokens %>%
-  mutate(sentence_end = sh$word %in% c(".", "?", "!")) %>%
+  mutate(sentence_end = word %in% c(".", "?", "!")) %>%
   group_by(id) %>%
   summarize(mean_sentence_len = n() / sum(sentence_end)) %>%
   ggplot(aes(id, mean_sentence_len)) +

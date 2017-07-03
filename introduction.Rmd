@@ -27,15 +27,16 @@ options(width = 68)
 ### Goals
 
 Our goal is to introduce concepts and tools for doing exploratory
-and predictive modelling with textual sources.
+and predictive modelling from textual sources. We will be focusing
+on natural language processing.
 
 ### Outline
 
-- Preliminaries (14:00-14:15)
-- Topic I: Tokenising text (14:15-15:00)
-- Topic II: The NLP Pipeline (15:00-15:30; 16:00-16:30)
-- Topic III: Modelling Textual Data (16:30-17:15)
-- Conclusions (17:15-17:30)
+- Preliminaries
+- Topic I: Tokenising text
+- Topic II: The NLP Pipeline
+- Topic III: Modelling Textual Data
+- Conclusions
 
 ### About us
 
@@ -134,16 +135,16 @@ presidential %>%
 ### cleanNLP
 
 Our main tool for text processing today will be our package
-**cleanNLP**. It is also available on CRAN and is described
-in the forthcoming paper to be published in The R Journal:
+**cleanNLP**. It is available on CRAN and is described in the
+forthcoming paper to be published in The R Journal:
 
 >  Taylor Arnold (2017). A Tidy Data Model for Natural Language
 >  Processing using cleanNLP. The R Journal, 9(2), 1-20. URL
 >  https://journal.r-project.org/archive/2017/RJ-2017-035/index.html.
 
-Finally, a more formal analysis of the internals of the package
-will be covered in the talk on Wednesday at 14:06 in Plenary 4.0
-as part of the *Text Mining* session.
+A more formal analysis of the internals of the package will be
+covered in the talk on Wednesday at 14:06 in Plenary 4.0 as
+part of the *Text Mining* session.
 
 
 
