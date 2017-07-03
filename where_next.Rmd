@@ -1,0 +1,73 @@
+---
+title: "Where To Next"
+author: "Taylor Arnold and Lauren Tilton"
+date: "04 July 2017"
+fontsize: 9pt
+output:
+  beamer_presentation:
+    template: template.beamer
+    pandoc_args: "--latex-engine=xelatex"
+    theme: "metropolis"
+    fonttheme: "professionalfonts"
+    slide_level: 3
+    df_print: tibble
+    fig_width: 9
+    fig_height: 5.5
+    fig_caption: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+options(dplyr.print_max = 6, dplyr.print_min = 6)
+options(width = 68)
+```
+
+### Summary of today
+
+- Preliminaries (14:00-14:15)
+- Topic I: Tokenising text (14:15-15:00)
+- Topic II: The NLP Pipeline (15:00-15:30; 16:00-16:30)
+- Topic III: Modelling Textual Data (16:30-17:15)
+- Conclusions (17:15-17:30)
+
+### Things we did not cover (but wanted to)
+
+- pre-processing data (i.e., HTML tags)
+- sentiment analysis
+- coreferences
+- word embeddings
+- non-western languages
+- reconstructing text
+- many more examples of using various
+    - parts of speech codes
+    - dependency types
+    - entity types
+
+### Other references
+
+The **cleanNLP** paper:
+
+>  Taylor Arnold (2017). A Tidy Data Model for Natural Language
+>  Processing using cleanNLP. The R Journal, 9(2), 1-20.
+
+Our book:
+
+> Taylor Arnold and Lauren Tilton (2015).
+> "Humanities Data in R: Exploring Networks, Geospatial Data, Images, and Text."
+> Quantitative Methods in the Humanities and Social Sciences
+> Springer, New York, NY, USA.
+
+Pedagogical paper:
+
+> Taylor Arnold and Lauren Tilton , "Basic Text Processing in R",
+> *Programming Historian*, (2017-03-27).
+
+And the talk:
+
+> Wednesday at 14:06 in Plenary 4.0 as part of the *Text Mining*
+> session.
+
+
+

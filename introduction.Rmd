@@ -1,0 +1,149 @@
+---
+title: "Preliminaries"
+author: "Taylor Arnold and Lauren Tilton"
+date: "04 July 2017"
+fontsize: 9pt
+output:
+  beamer_presentation:
+    template: template.beamer
+    pandoc_args: "--latex-engine=xelatex"
+    theme: "metropolis"
+    fonttheme: "professionalfonts"
+    slide_level: 3
+    df_print: tibble
+    fig_width: 9
+    fig_height: 5.5
+    fig_caption: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+options(dplyr.print_max = 6, dplyr.print_min = 6)
+options(width = 68)
+```
+
+### Introduction
+
+Our goal is to introduce concepts and tools for doing exploratory
+and predictive modelling with textual sources. 
+
+### Outline
+
+- Preliminaries (14:00-14:15)
+- Topic I: Tokenising text (14:15-15:00)
+- Topic II: The NLP Pipeline (15:00-15:30; 16:00-16:30)
+- Topic III: Modelling Textual Data (16:30-17:15)
+- Conclusions (17:15-17:30)
+
+### About us
+
+**\myorange{Taylor Arnold}**
+
+- studies the application and computational challenges of using
+natural language and image processing to analyze large datasets
+- intersection of statistics, computer science, linguistics, and the
+computational humanities
+
+**\myorange{Lauren Tilton}**
+
+- scholar of 20th century U.S. visual culture
+- applies computational techniques to answer humanities questions
+
+**\myorange{Joint Work}**
+
+- *Humanities Data in R* -- (2015) Quantitative Methods in the Humanities and
+Social Sciences, Springer
+- *Photogrammar* -- Digital project of historical photographs from the 1930s and 1940s:
+[https://photogrammar.org](https://photogrammar.org)
+- *Photogrammar* -- Digital project applying computational techniques to analyze moving
+image culture at scale: [https://www.distanttv.org/](https://www.distanttv.org/)
+
+### Working through this tutorial
+
+All of the materials we are showing today are available
+as a GitHub repository. We encourage following along on
+your laptop as we run through the code snippets, or later
+at your own pace.
+
+To do so, clone the GitHub repository from here:
+
+> [https://github.com/statsmaths/useR2017_nlp](https://github.com/statsmaths/useR2017_nlp).
+
+Each of the sections to the talk are presented as individual
+R markdown files. All of the data is included in the repository
+and any required packages required can be downloaded from CRAN.
+
+### Coding style
+
+Today we will make heavy use of the coding style adapted
+from
+
+- the piping paradigm of the  **magrittr** package
+- *table verbs* from the package **dplyr**
+- graphics from **ggplot2**
+
+If you are not familiar with these, the code may seem a bit
+strange at first but we feel that it is the clearest way to
+present the material and very much simplifies the code.
+
+### Pipes
+
+As a way of a very brief tutorial, the pipe operator `%>%` simply passes
+the output of one expression to the first element of the next:
+
+```{r}
+1:10 %>%
+  length()
+```
+
+Or
+
+```{r}
+matrix(1:12, ncol = 4) %>%
+  dim()
+```
+
+### dplyr verbs: filter
+
+Table verbs always take a data frame as a first argument (and therefore
+work well with pipes) and generally map into common database operations.
+
+Specifically, `filter` accepts logical conditions and returns only those
+rows where the result is `TRUE`. For example, here we filter on the party
+of
+
+```{r}
+presidential %>%
+  filter(party == "Democratic")
+```
+
+### dplyr verbs: mutate and count
+
+Likewise, `mutate` adds new columns to the data
+frame, and `count` aggregates the number of occurrences of a selected
+set of variables. For example, to count the parties of the presidents
+in the `presidents` dataset:
+
+```{r}
+presidential %>%
+  count(party, sort = TRUE)
+```
+
+### cleanNLP
+
+Our main tool for text processing today will be our package
+**cleanNLP**. It is also available on CRAN and is described
+in the forthcoming paper to be published in The R Journal:
+
+>  Taylor Arnold (2017). A Tidy Data Model for Natural Language
+>  Processing using cleanNLP. The R Journal, 9(2), 1-20. URL
+>  https://journal.r-project.org/archive/2017/RJ-2017-035/index.html.
+
+Finally, a more formal analysis of the internals of the package
+will be covered in the talk on Wednesday at 14:06 in Plenary 4.0
+as part of the *Text Mining* session.
+
+
+
