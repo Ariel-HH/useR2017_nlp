@@ -58,7 +58,7 @@ computational humanities
 Social Sciences, Springer
 - *Photogrammar* -- Digital project of historical photographs from the 1930s and 1940s:
 [https://photogrammar.org](https://photogrammar.org)
-- *Photogrammar* -- Digital project applying computational techniques to analyze moving
+- *DistantTV* -- Digital project applying computational techniques to analyze moving
 image culture at scale: [https://www.distanttv.org/](https://www.distanttv.org/)
 
 ### Working through this tutorial
