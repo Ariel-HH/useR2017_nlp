@@ -119,6 +119,3 @@ forthcoming paper to be published in The R Journal:
 A more formal analysis of the internals of the package will be
 covered in the talk on Wednesday at 14:06 in Plenary 4.0 as
 part of the *Text Mining* session.
-
-
-

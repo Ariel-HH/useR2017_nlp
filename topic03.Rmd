@@ -94,6 +94,7 @@ on whether it was given as a speech or a written document?
 ```{r, eval = FALSE}
 sotu_nlp %>%
   count(id) %>%
+  group_by(id) %>%
   left_join(sotu_meta, by = "id") %>%
   ggplot(aes(year, n)) +
     geom_line(color = grey(0.8)) +
@@ -105,9 +106,9 @@ sotu_nlp %>%
 ### Length in words
 
 ```{r, echo = FALSE, message = FALSE}
-
 sotu_nlp %>%
   count(id) %>%
+  group_by(id) %>%
   left_join(sotu_meta, by = "id") %>%
   ggplot(aes(year, n)) +
     geom_line(color = grey(0.8)) +
@@ -566,7 +567,9 @@ sprintf("%s (%d)", mat$vocab, sign(beta))[beta != 0]
 
 ### On your own
 
-\Large \myorange{By looking at examples (and not cheating by looking
-at the Penn Treebank codes), what
-are the differences between the four types of nouns: NN, NNS, NNP, NNPS?
-}
+\Large \myorange{Take all State of the Union Addressess from 1982 to
+the present. Build a classifier that detects whether the speech is given
+by a Democrat or Republican.}
+
+\myorange{How well does this model perform? Are any years or presidents
+particularly difficult to classify?}

@@ -415,12 +415,6 @@ sh_propn <- ungroup(sh_propn)
 sh_propn %>% filter(id == 1) %>% print(n = Inf)
 ```
 
-### Proper nouns from 'The Musgrave Ritual'
-
-```{r}
-sh_propn %>% filter(id == 17) %>% print(n = Inf)
-```
-
 ### Proper nouns from 'His Last Bow'
 
 ```{r}

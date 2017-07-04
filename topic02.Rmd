@@ -214,6 +214,7 @@ sh_lemmafr <- sh_nlp %>%
   filter(frequency < 0.01) %>%
   filter((tolower(word) == word)) %>%
   count(id, lemma) %>%
+  group_by(id) %>%
   top_n(n = 10, n) %>%
   left_join(sh_meta, by = "id") %>%
   arrange(id, desc(n))
@@ -300,6 +301,7 @@ replaced by filtering on the proper noun tag "PROPN":
 sh_topchar <- sh_nlp %>%
   filter(upos == "PROPN") %>%
   count(id, word) %>%
+  group_by(id) %>%
   top_n(n = 10, n) %>%
   left_join(sh_meta, by = "id") %>%
   arrange(id, desc(n))
@@ -378,6 +380,7 @@ sh_nerchar <- sh_nlp %>%
   filter(!is.na(entity)) %>%
   filter(entity_type == "PERSON") %>%
   count(id, entity) %>%
+  group_by(id) %>%
   top_n(n = 10, n) %>%
   left_join(sh_meta, by = "id") %>%
   arrange(id, desc(n))
