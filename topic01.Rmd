@@ -35,6 +35,7 @@ library(dplyr)
 library(readr)
 library(stringi)
 library(ggplot2)
+library(tokenizers)
 theme_set(theme_minimal())
 ```
 
