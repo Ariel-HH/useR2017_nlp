@@ -130,7 +130,6 @@ in the original white space based technique:
 letranger_tokens$word
 ```
 
-
 ### Corpus Metadata
 
 A dataset where each record is its own text is known
@@ -188,6 +187,12 @@ sh_tokens
 ```{r}
 sh_tokens %>% filter(id == 1) %>% filter(sid == 10) %>% print(n = 12)
 ```
+
+### On your own
+
+\Large \myorange{Pick another sentence or two from the story and look
+at the tokenisation. Is this a proper sentence or has the tokenizer
+made any mistakes? How well are the tokens split apart?}
 
 # Tokens and style
 
@@ -333,6 +338,7 @@ names of each story to the output:
 sh_toptokens <- sh_tokens %>%
   filter(!(tolower(word) %in% stopwords)) %>%
   count(id, word, sort = TRUE) %>%
+  group_by(id) %>%
   top_n(n = 10, n) %>%
   left_join(sh_meta, by = "id")
 ```
@@ -350,16 +356,6 @@ sh_toptokens <- ungroup(sh_toptokens)
 sh_toptokens %>% filter(id == 1) %>% print(n = Inf)
 ```
 
-### 'The Musgrave Ritual'
-
-![](img/musgrave_ritual.jpg)
-
-### Tokens from 'The Musgrave Ritual'
-
-```{r}
-sh_toptokens %>% filter(id == 17) %>% print(n = Inf)
-```
-
 ### 'His Last Bow'
 
 ![](img/his_last_bow.jpg)
@@ -369,6 +365,14 @@ sh_toptokens %>% filter(id == 17) %>% print(n = Inf)
 ```{r}
 sh_toptokens %>% filter(id == 44) %>% print(n = Inf)
 ```
+### On your own
+
+\Large \myorange{Pick another story and find the top words from it
+using the same method. Can you tell anything about the characters or
+plot from these terms?}
+
+\myorange{Time permitting, read the short summary on Wikipedia for
+the story and compare this to the list of top words.}
 
 # Extracting and Locating Characters
 
@@ -397,6 +401,7 @@ sh_propn <- sh_tokens %>%
   filter(!(tolower(word) %in% stopwords)) %>%
   filter((tolower(word) != word)) %>%
   count(id, word, sort = TRUE) %>%
+  group_by(id) %>%
   top_n(n = 10, n) %>%
   left_join(sh_meta, by = "id")
 ```
@@ -439,6 +444,7 @@ sh_topchar <- sh_tokens %>%
   filter((tolower(word) != word)) %>%
   count(id, word) %>%
   left_join(sh_meta, by = "id") %>%
+  group_by(id) %>%
   top_n(n = 1, n)
 ```
 ```{r, echo = FALSE}
@@ -448,7 +454,7 @@ sh_topchar <- ungroup(sh_topchar)
 ### One top character, cont.
 
 ```{r}
-sh_topchar %>% filter(id %in% c(1, 12, 17, 45)) %>%
+sh_topchar %>% filter(id %in% c(1, 45)) %>%
   print(n = Inf)
 ```
 
@@ -485,6 +491,13 @@ sh_tokens %>%
     geom_point()
 ```
 
+### On your own
+
+\Large \myorange{Repeat the list of top characters code, but this
+time do not remove Holmes and Watson. How often are each of them
+identified as the most important characcter? Do you see any interesting
+patterns?}
+
 # Identifying Themes
 
 ### Textual topics and themes
@@ -507,6 +520,7 @@ sh_theme <- sh_tokens %>%
   filter(!(tolower(word) %in% stopwords)) %>%
   filter((tolower(word) == word)) %>%
   count(id, word) %>%
+  group_by(id) %>%
   top_n(n = 10, n) %>%
   left_join(sh_meta, by = "id")
 ```
@@ -544,6 +558,7 @@ sh_wordfreq <- sh_tokens %>%
   filter(frequency < 0.01) %>%
   filter((tolower(word) == word)) %>%
   count(id, word) %>%
+  group_by(id) %>%
   top_n(n = 10, n) %>%
   left_join(sh_meta, by = "id") %>%
   arrange(id, desc(n))
