@@ -284,6 +284,13 @@ taught in schools:
 These are contained in the variable `upos`,
 and for today will be the most useful for our analysis.
 
+### On your own
+
+\Large \myorange{Looking at examples (and not cheating by looking
+at the Penn Treebank codes), what
+are the differences between the four types of nouns: NN, NNS, NNP, NNPS?
+}
+
 ### Top characters, again
 
 Here, for example, is the analysis of key characters with our trick

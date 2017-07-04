@@ -49,7 +49,7 @@ computational humanities
 
 **\myorange{Lauren Tilton}**
 
-- scholar of 20th century U.S. visual culture
+- scholar of 20th century U.S. culture
 - applies computational techniques to answer humanities questions
 
 **\myorange{Joint Work}**
@@ -104,32 +104,6 @@ Or
 ```{r}
 matrix(1:12, ncol = 4) %>%
   dim()
-```
-
-### dplyr verbs: filter
-
-Table verbs always take a data frame as a first argument (and therefore
-work well with pipes) and generally map into common database operations.
-
-Specifically, `filter` accepts logical conditions and returns only those
-rows where the result is `TRUE`. For example, here we filter on the party
-of
-
-```{r}
-presidential %>%
-  filter(party == "Democratic")
-```
-
-### dplyr verbs: mutate and count
-
-Likewise, `mutate` adds new columns to the data
-frame, and `count` aggregates the number of occurrences of a selected
-set of variables. For example, to count the parties of the presidents
-in the `presidents` dataset:
-
-```{r}
-presidential %>%
-  count(party, sort = TRUE)
 ```
 
 ### cleanNLP

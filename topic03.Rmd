@@ -563,3 +563,10 @@ ggplot(m2, aes(factor(year),pred)) +
 beta <- coef(model, s = model[["lambda"]][12])[-1]
 sprintf("%s (%d)", mat$vocab, sign(beta))[beta != 0]
 ```
+
+### On your own
+
+\Large \myorange{By looking at examples (and not cheating by looking
+at the Penn Treebank codes), what
+are the differences between the four types of nouns: NN, NNS, NNP, NNPS?
+}
